@@ -1,0 +1,118 @@
+def valid(email):
+    validInputs = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_'
+    
+    x = email.split('@')
+
+    y = x[1].split('.')
+    
+    z1 = [x[0]]+y
+    z = ""
+    for i in z1:
+        z += i
+    for i in z:
+        if i not in validInputs:
+            return False
+        if len(z1[2]) < 3:
+            return False
+        for i in z1[1]:
+            if i not in validInputs[0:-2]:
+                return False
+
+        return True
+    
+
+
+num1 = int(input())
+
+
+emails = [input() for x in range(num1)]
+
+listEmails = list(filter(valid,emails))
+
+listEmails.sort()
+
+print(listEmails)
+
+def gmail(email):
+    validInputs = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_'
+    
+    x = email.split('@')
+
+    y = x[1].split('.')
+    
+    z1 = [x[0]]+y
+    z = ""
+    for i in z1:
+        z += i
+    for i in z:
+        if i not in validInputs:
+            return False
+        if len(z1[2]) < 3:
+            return False
+        for i in z1[1]:
+            if i not in validInputs[0:-2]:
+                return False
+        if z1[1] != "gmail":
+            return False
+        return True
+        
+gmailz = (
+'mbrown@msn.com',
+'bartak@mac.com',
+'jshirley@hotmail.com'
+'skajan@msn.com',
+'gboss@yahoo.ca',
+'jdhildeb@mac.com',
+'fallorn@mac.com',
+'scottzed@hotmail.com',
+'dwheeler@comcast.net',
+'geoffr@mac.com',
+'murty@yahoo.ca',
+'nwiger@gmail.com',
+'paley@hotmail.com',
+'mglee@optonline.net',
+'sjava@msn.com',
+'richard@yahoo.ca',
+'jmgomez@outlook.com',
+'thaljef@hotmail.com',
+'leakin@aol.com',
+'wbarker@live.com',
+'credmond@sbcglobal.net',
+'klaudon@yahoo.ca',
+'mddallara@gmail.com',
+'agapow@icloud.com',
+'scottlee@me.com',
+'drolsky@me.com',
+'goldberg@comcast.net',
+'bjornk@yahoo.ca',
+'mkearl@yahoo.ca',
+'benanov@hotmail.com',
+'valdez@mac.com',
+'mahbub@msn.com',
+'parents@hotmail.com',
+'wilsonpm@verizon.net',
+'jigsaw@sbcglobal.net',
+'bmorrow@att.net',
+'scottlee@optonline.net',
+'muzzy@yahoo.com',
+'themer@yahoo.ca',
+'ozawa@gmail.com',
+'smcnabb@comcast.net',
+'kohlis@yahoo.ca',
+'jespley@outlook.com',
+'bancboy@att.net',
+'donev@msn.com',
+'kimvette@msn.com',
+'pontipak@icloud.com',
+'cmdrgravy@aol.com',
+'dunstan@me.com',
+'bogjobber@att.net'
+)
+
+
+gm = list(filter(gmail,gmailz))
+gm.sort()
+
+print(gm)
+
+
