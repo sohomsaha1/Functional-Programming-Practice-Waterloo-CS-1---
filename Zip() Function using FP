@@ -1,0 +1,4 @@
+# Turns 2 lists into a matrix with 2 by 3 instead of 3 by 2 -- [1,2,3][4,5,6] --> [1,4][2,5][3,6]
+zip1 = lambda arr1,arr2,empt = [],loc = 0: empt if loc == len(arr1) else zip1(arr1,arr2,empt+[[arr1[loc],arr2[loc]]],loc+1)
+
+print(zip1([1,2,3],[4,5,6]))
