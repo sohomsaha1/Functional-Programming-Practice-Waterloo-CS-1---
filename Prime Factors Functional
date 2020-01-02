@@ -1,0 +1,13 @@
+def pp(x):
+    y = x
+    c = 0
+    while y%2 == 0:
+        y/=2
+        c +=1
+    for i in range(3,int(x**0.5)+1,2):
+        while y%i ==0:
+            c+=1
+            y/=i
+    return c
+
+print(pp(10))
