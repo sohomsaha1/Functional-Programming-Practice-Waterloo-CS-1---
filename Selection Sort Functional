@@ -1,0 +1,14 @@
+
+def selection(array,ar = []):
+
+    x = [y for y in array]
+
+    while len(x) > 0:
+        ar.append(min(x))
+        x.remove(min(x))
+    
+    return ar
+
+
+print(selection(ar))
+print(ar)
